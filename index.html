@@ -32,18 +32,38 @@
         <h1 class="hero-title animate__animated animate__slideInUp">
           Never Miss an FC Barcelona Match!
         </h1>
+        <!-- Hero subtitle loads with a 1s delay as before -->
         <p
           class="hero-subtitle animate__animated animate__slideInUp animate__delay-1s"
+          style="opacity: 0"
         >
           Get timely reminders for all FC Barcelona games.<br />
           7, 5, and 2 hours before each match!
         </p>
+        <!-- "Start Now" button now appears after 0.8 seconds -->
         <a
           href="https://t.me/FCBarcelonaReminderBot"
-          class="cta-btn animate__animated animate__fadeIn animate__delay-1s"
+          class="cta-btn animate__animated animate__fadeIn"
+          style="animation-delay: 0.8s"
         >
           Start Now
         </a>
+        <!-- Modern Scroll Down Arrow: updated to appear after 0.8 seconds -->
+        <div class="scroll-arrow">
+          <!-- Inline SVG arrow -->
+          <svg
+            width="50"
+            height="50"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          >
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </div>
       </div>
     </header>
 

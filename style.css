@@ -17,7 +17,13 @@ body {
   opacity: 0;
 }
 
-/* Animate.css override: Slow down bounceInLeft animation */
+/* Initially hide the hero-subtitle */
+.hero-subtitle {
+  opacity: 0;
+}
+
+/* Animate.css overrides */
+/* Slow down bounceInLeft animation for screenshots */
 .animate__bounceInLeft {
   animation-duration: 1.5s !important;
 }
@@ -84,6 +90,7 @@ header {
   margin-bottom: 40px;
 }
 
+/* CTA Button */
 .cta-btn {
   background-color: #E30B17;
   color: #fff;
@@ -98,6 +105,28 @@ header {
 .cta-btn:hover {
   transform: scale(1.05);
   background-color: #c10f14;
+}
+
+/* Scroll Arrow: custom fade in & slow bounce */
+/* Updated so that both fadeIn and slowBounce start after 0.8s */
+.scroll-arrow {
+  color: #fff;
+  margin-top: 60px;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 1s 0.8s forwards, slowBounce 1.5s ease-in-out 0.8s infinite;
+}
+
+/* Keyframes for fadeIn */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Keyframes for slowBounce */
+@keyframes slowBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }
 
 /* Sections */
@@ -170,11 +199,11 @@ h2 {
 
 /* Contact Section: Add margin to push down the GitHub button */
 #contact p {
-  margin-bottom: 35px; /* Adds space below the paragraph */
+  margin-bottom: 20px;
 }
 
 #contact .cta-btn {
-  margin-top: 20px; /* Adds space above the button */
+  margin-top: 20px;
 }
 
 /* Footer */

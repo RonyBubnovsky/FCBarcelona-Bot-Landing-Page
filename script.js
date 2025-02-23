@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Intersection Observer for scroll-triggered elements
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -15,8 +16,16 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     { threshold: 0.1, rootMargin: "0px 0px -10% 0px" }
   );
-
+  
   document.querySelectorAll(".animate-on-scroll").forEach((el) => {
     observer.observe(el);
   });
+  
+  // Ensure the hero-subtitle becomes visible after 0.8 seconds (for its animation)
+  setTimeout(() => {
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    if (heroSubtitle) {
+      heroSubtitle.style.opacity = "1";
+    }
+  }, 800);
 });
