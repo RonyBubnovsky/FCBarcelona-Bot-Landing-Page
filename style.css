@@ -108,7 +108,7 @@ header {
 }
 
 /* Scroll Arrow: custom fade in & slow bounce */
-/* Updated so that both fadeIn and slowBounce start after 0.8s */
+/* Both animations now start after 0.8s, and slowBounce lasts 1.5s */
 .scroll-arrow {
   color: #fff;
   margin-top: 60px;
@@ -178,23 +178,29 @@ h2 {
   justify-items: center;
 }
 
-/* Image Wrapper with hover enlargement */
+/* Image Wrapper with modern hover enlargement */
 .image-wrapper {
   position: relative;
   display: inline-block;
   border-radius: 10px;
-  transition: transform 0.3s ease;
+  transition: box-shadow 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.image-wrapper:hover {
-  transform: scale(1.05);
-}
-
+/* Apply scaling on the image inside the wrapper */
 .image-wrapper img {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 10px;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.1);
+}
+
+.image-wrapper:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* Contact Section: Add margin to push down the GitHub button */
