@@ -186,7 +186,7 @@ h2 {
   transition: box-shadow 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Apply scaling on the image inside the wrapper */
+/* Scale the image on hover */
 .image-wrapper img {
   display: block;
   width: 100%;
@@ -201,6 +201,31 @@ h2 {
 
 .image-wrapper:hover {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Tooltip styling */
+.tooltip {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.image-wrapper:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* Contact Section: Add margin to push down the GitHub button */
